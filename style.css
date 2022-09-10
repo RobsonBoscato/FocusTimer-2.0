@@ -7,10 +7,13 @@
 :root {
   font-size: 62.5%;
 
-  --bg-color: #121214;
+  --bg-color: #FFFFFF;
   --base-color: 255;
-  --text-color: #ffffff;
-  --bg-primary-light: hsla(194, 27%, 38%, 0.404);
+  --text-color: #323238;
+  
+  --bg-primary-light:hsla(240, 9%, 89%, 1) ;
+  --bg-secondary-light: hsla(194, 97%, 31%, 1);
+  
   --primary-color:: hsl(var(var(--base-color)), 100%, 63%);
 
 }
@@ -30,6 +33,15 @@ body {
 main {
   align-self: end;
   justify-self: center;
+  user-select: none;
+  
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80rem;
+  height: 34rem;
 }
 
 button {
@@ -46,36 +58,54 @@ button svg {
   display: none;
 }
 
-/* .play img svg path,
-.pause svg,
-.sound-on svg path {
-  fill: var(--primary-color);
-} */
-
-
 #timer {
-  display: flex;
-  margin-bottom: 1.6rem;
-
+  display: inline;
+  justify-content: center;
+  margin-bottom: -2rem;
+  
   font-size: 8.8rem;
   line-height: 10rem;
   font-weight: 700;
+  
+}
+span {
+  display: table-cell;
 }
 
 #controls {
-  background: var(--bg-primary-light);
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
   gap: 3.2rem;
-
+  
   border-radius: 100rem;
-
+  
   width: clamp(10rem, 4rem + 26vw, 22.8rem);
   height: clamp(8rem, 2rem + 10vw, 10.8rem);
 }
+#card-sounds{
+  display: flex;
+  flex-wrap: wrap;
+  width: 30.8rem;
+  height: 33.6rem;
+  gap: 3rem;
 
+  cursor: pointer;
+}
+#card1, #card2, #card3, #card4{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  width: 13.8rem;
+  height: 15.2rem;
+  border-radius: 2.4rem;
+  
+  background: var(--bg-primary-light);
+  padding: 4.8rem;
+
+}
 footer {
   align-self: end;
   justify-self: end;
