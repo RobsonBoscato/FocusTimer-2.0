@@ -6,9 +6,21 @@ export default function ControlsFactory({
   buttonSoundOn,
   buttonSoundOff,
   buttonSoundForest,
+  buttonSoundRain,
+  buttonSoundStore,
+  buttonSoundFire,
 }) {
   function soundForest() {
     buttonSoundForest.classList.toggle('filter');
+  }
+  function soundRain() {
+    buttonSoundRain.classList.toggle('filter');
+  }
+  function soundStore() {
+    buttonSoundStore.classList.toggle('filter');
+  }
+  function soundFire() {
+    buttonSoundFire.classList.toggle('filter');
   }
 
   function play() {
@@ -58,5 +70,8 @@ export default function ControlsFactory({
     soundOff,
     getMinutes,
     soundForest,
+    soundRain,
+    soundStore,
+    soundFire,
   };
 }

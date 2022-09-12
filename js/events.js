@@ -28,25 +28,37 @@ export default function factoryEvents({ controls, sound, configTimer }) {
   buttonSoundFire.addEventListener('click', handleButtonSoundFire);
 
   function handleButtonSoundForest() {
-    // controls.soundForest();
-    buttonSoundForest.classList.toggle('filter');
+    controls.soundForest();
+    sound.pressButton();
+    sound.forestPlay();
+    controls.soundOn();
   }
 
   function handleButtonSoundRain() {
-    buttonSoundRain.classList.toggle('filter');
+    controls.soundRain();
+    sound.pressButton();
+    sound.rainPlay();
   }
 
   function handleButtonSoundStore() {
-    buttonSoundStore.classList.toggle('filter');
+    controls.soundStore();
+    sound.pressButton();
+    sound.storePlay();
   }
 
   function handleButtonSoundFire() {
-    buttonSoundFire.classList.toggle('filter');
+    controls.soundFire();
+    sound.pressButton();
+    sound.firePlay();
   }
 
-  function handleButtonIncrementTime() {}
+  function handleButtonIncrementTime() {
+    sound.pressButton();
+  }
 
-  function handleButtonDecrementTime() {}
+  function handleButtonDecrementTime() {
+    sound.pressButton();
+  }
 
   function handleButtonPlay() {
     controls.play();
@@ -68,12 +80,13 @@ export default function factoryEvents({ controls, sound, configTimer }) {
 
   function handleButtonSoundOn() {
     controls.soundOn();
-    sound.bgAudio.pause();
+    sound.playSound();
   }
 
   function handleButtonSoundOff() {
     controls.soundOff();
-    sound.bgAudio.play();
+    // sound.play();
+    sound.stopSound();
   }
 
   function handleButtonSet() {
@@ -95,5 +108,9 @@ export default function factoryEvents({ controls, sound, configTimer }) {
     handleButtonSet,
     handleButtonSoundOn,
     handleButtonSoundOff,
+    handleButtonSoundForest,
+    handleButtonSoundRain,
+    handleButtonSoundStore,
+    handleButtonSoundFire,
   };
 }

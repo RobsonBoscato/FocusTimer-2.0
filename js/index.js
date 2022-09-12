@@ -11,6 +11,10 @@ import {
   secondsDisplay,
   buttonSoundOn,
   buttonSoundOff,
+  buttonSoundForest,
+  buttonSoundRain,
+  buttonSoundStore,
+  buttonSoundFire,
 } from './elements.js';
 
 const controls = ControlsFactory({
@@ -20,6 +24,10 @@ const controls = ControlsFactory({
   buttonStop,
   buttonSoundOn,
   buttonSoundOff,
+  buttonSoundForest,
+  buttonSoundRain,
+  buttonSoundFire,
+  buttonSoundStore,
 });
 
 const configTimer = TimerFactory({
@@ -29,4 +37,5 @@ const configTimer = TimerFactory({
 });
 
 const sound = Sounds();
+
 factoryEvents({ controls, configTimer, sound });
