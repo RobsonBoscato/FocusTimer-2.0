@@ -6,6 +6,12 @@ const buttonSoundOn = document.querySelector('.sound-on');
 const buttonSoundOff = document.querySelector('.sound-off');
 const minutesDisplay = document.querySelector('#minutes');
 const secondsDisplay = document.querySelector('#seconds');
+const buttonIncMinutes = document.querySelector('.addminutes');
+const buttonDecMinutes = document.querySelector('.decminutes');
+const buttonSoundForest = document.querySelector('#sound-forest');
+const buttonSoundRain = document.querySelector('#sound-rain');
+const buttonSoundStore = document.querySelector('#sound-store');
+const buttonSoundFire = document.querySelector('#sound-fire');
 
 export {
   buttonPlay,
@@ -16,4 +22,10 @@ export {
   buttonSoundOff,
   minutesDisplay,
   secondsDisplay,
+  buttonDecMinutes,
+  buttonIncMinutes,
+  buttonSoundForest,
+  buttonSoundRain,
+  buttonSoundStore,
+  buttonSoundFire,
 };

@@ -6,7 +6,7 @@ Detalhamento das etapas realizadas:
 
 <ul>
   <li>Redesenhada a estrutura HTML;</li>
-  <li></li>
+  <li>Adicionado interatividade e  eventListener nos botões</li>
   <li></li>
   <li></li>
   <li></li>

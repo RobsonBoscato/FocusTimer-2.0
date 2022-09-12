@@ -13,9 +13,9 @@
   
   --bg-primary-light:hsla(240, 9%, 89%, 1) ;
   --bg-secondary-light: hsla(194, 97%, 31%, 1);
+  --text-color-secondary: #FFFFFF;
   
-  --primary-color:: hsl(var(var(--base-color)), 100%, 63%);
-
+  --primary-color:: hsl(var(--base-color), 100%, 63%);
 }
 
 body {
@@ -23,19 +23,16 @@ body {
   color: var(--text-color);
 
   font-family: 'Roboto', sans-serif;
-
   display: grid;
-
-  min-height: 100vh;
-  
+  min-height: 100vh; 
 }
 
 main {
   align-self: end;
   justify-self: center;
   user-select: none;
-  
 }
+
 .container {
   display: flex;
   justify-content: space-between;
@@ -84,16 +81,20 @@ span {
   width: clamp(10rem, 4rem + 26vw, 22.8rem);
   height: clamp(8rem, 2rem + 10vw, 10.8rem);
 }
-#card-sounds{
+#card-sounds {
   display: flex;
   flex-wrap: wrap;
-  width: 30.8rem;
-  height: 33.6rem;
-  gap: 3rem;
-
   cursor: pointer;
+
+  width: 40rem;
+  height: 33.6rem;
 }
-#card1, #card2, #card3, #card4{
+
+#card button {
+  margin: 1rem;
+}
+
+#card img {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -103,9 +104,13 @@ span {
   border-radius: 2.4rem;
   
   background: var(--bg-primary-light);
-  padding: 4.8rem;
-
+  padding: 4.6rem;
 }
+
+.filter {
+  filter: invert(90%) sepia(0%) saturate(1200%) hue-rotate(140deg) brightness(200%) contrast(80%);
+}
+
 footer {
   align-self: end;
   justify-self: end;

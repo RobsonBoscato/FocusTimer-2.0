@@ -5,7 +5,12 @@ export default function ControlsFactory({
   buttonStop,
   buttonSoundOn,
   buttonSoundOff,
+  buttonSoundForest,
 }) {
+  function soundForest() {
+    buttonSoundForest.classList.toggle('filter');
+  }
+
   function play() {
     buttonPlay.classList.add('hide');
     buttonPause.classList.remove('hide');
@@ -52,5 +57,6 @@ export default function ControlsFactory({
     soundOn,
     soundOff,
     getMinutes,
+    soundForest,
   };
 }
