@@ -11,6 +11,8 @@ import {
   buttonSoundRain,
   buttonSoundStore,
   buttonSoundFire,
+  minutesDisplay,
+  secondsDisplay,
 } from './elements.js';
 
 export default function factoryEvents({ controls, sound, configTimer }) {
@@ -54,10 +56,20 @@ export default function factoryEvents({ controls, sound, configTimer }) {
 
   function handleButtonIncrementTime() {
     sound.pressButton();
+    let minutes = Number(minutesDisplay.textContent) + 5;
+    configTimer.updateMinutes(minutes);
+    configTimer.updateDisplay(minutes, secondsDisplay.textContent);
   }
 
   function handleButtonDecrementTime() {
     sound.pressButton();
+    let minutes = Number(minutesDisplay.textContent) - 5;
+    if (minutes <= 0) {
+      alert('[ERRO] Novo tempo definido abaixo de 0.');
+      minutes = Number(minutesDisplay.textContent);
+    }
+    configTimer.updateMinutes(minutes);
+    configTimer.updateDisplay(minutes, secondsDisplay.textContent);
   }
 
   function handleButtonPlay() {
@@ -85,7 +97,6 @@ export default function factoryEvents({ controls, sound, configTimer }) {
 
   function handleButtonSoundOff() {
     controls.soundOff();
-    // sound.play();
     sound.stopSound();
   }
 
@@ -112,5 +123,7 @@ export default function factoryEvents({ controls, sound, configTimer }) {
     handleButtonSoundRain,
     handleButtonSoundStore,
     handleButtonSoundFire,
+    handleButtonIncrementTime,
+    handleButtonDecrementTime,
   };
 }

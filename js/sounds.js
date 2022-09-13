@@ -1,5 +1,6 @@
 export default function () {
   let currentSound;
+  let selectedCard = false;
   const buttonPressAudio = new Audio(
     'https://github.com/RobsonBoscato/sounds/blob/main/audios_button-press.wav?raw=true'
   );
@@ -19,43 +20,58 @@ export default function () {
     'https://github.com/RobsonBoscato/sounds/blob/main/Lareira.wav?raw=true'
   );
 
-  forest.loop = true;
-  rain.loop = true;
-  store.loop = true;
-  fire.loop = true;
-
-  console.log(currentSound);
-
   function validationCardSounds() {
-    if (currentSound !== undefined) {
-      console.log('entrei');
-      currentSound.loop = false;
-      currentSound.currentTime = 220;
+    if (currentSound != undefined || currentSound == 1) {
+      forest.loop = false;
+      rain.loop = false;
+      store.loop = false;
+      fire.loop = false;
+      forest.pause();
+      rain.pause();
+      store.pause();
+      fire.pause();
+      currentSound = 0;
     }
   }
-  console.log(currentSound);
+
   function forestPlay() {
-    validationCardSounds();
+    if (currentSound == 1) {
+      validationCardSounds();
+      return;
+    }
+    forest.loop = true;
     forest.play();
     currentSound = 1;
   }
 
   function rainPlay() {
-    validationCardSounds();
+    if (currentSound == 1) {
+      validationCardSounds();
+      return;
+    }
+    rain.loop = true;
     rain.play();
-    // currentSound = 1;
+    currentSound = 1;
   }
 
   function storePlay() {
-    validationCardSounds();
+    if (currentSound == 1) {
+      validationCardSounds();
+      return;
+    }
+    store.loop = true;
     store.play();
-    // currentSound = 1;
+    currentSound = 1;
   }
 
   function firePlay() {
-    validationCardSounds();
+    if (currentSound == 1) {
+      validationCardSounds();
+      return;
+    }
+    fire.loop = true;
     fire.play();
-    // currentSound = 1;
+    currentSound = 1;
   }
   function timeEnd() {
     kitchenTimer.play();
