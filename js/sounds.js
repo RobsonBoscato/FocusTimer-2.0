@@ -1,6 +1,5 @@
 export default function () {
   let currentSound;
-  let selectedCard = false;
   const buttonPressAudio = new Audio(
     'https://github.com/RobsonBoscato/sounds/blob/main/audios_button-press.wav?raw=true'
   );

@@ -33,10 +33,6 @@ export function TimerFactory({
     }, 1000);
   }
 
-  function currentTime() {
-    let currentMinutes = Number(minutesDisplay.textContent);
-  }
-
   function updateDisplay(newMinutes, seconds) {
     newMinutes = newMinutes === undefined ? minutes : newMinutes;
     seconds = seconds === undefined ? 0 : seconds;
@@ -63,6 +59,5 @@ export function TimerFactory({
     updateDisplay,
     updateMinutes,
     hold,
-    currentTime,
   };
 }

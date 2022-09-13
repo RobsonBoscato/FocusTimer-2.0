@@ -65,11 +65,12 @@ export default function factoryEvents({ controls, sound, configTimer }) {
     sound.pressButton();
     let minutes = Number(minutesDisplay.textContent) - 5;
     if (minutes <= 0) {
-      alert('[ERRO] Novo tempo definido abaixo de 0.');
+      alert('[ERRO] Tempo mínimo 5 minutos.');
       minutes = Number(minutesDisplay.textContent);
     }
     configTimer.updateMinutes(minutes);
     configTimer.updateDisplay(minutes, secondsDisplay.textContent);
+    console.log(minutes, seconds);
   }
 
   function handleButtonPlay() {
