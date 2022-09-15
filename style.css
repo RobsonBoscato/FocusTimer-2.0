@@ -18,6 +18,12 @@
   --primary-color:: hsl(var(--base-color), 100%, 63%);
 }
 
+body.dark {
+  color: white;
+  background: #121214;
+
+}
+
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
@@ -28,11 +34,16 @@ body {
 }
 
 main {
-  align-self: end;
   justify-self: center;
   user-select: none;
 }
 
+#theme {
+  justify-self: end;
+  top: right;
+  padding: 10%;
+  user-select: none;
+}
 .container {
   display: flex;
   justify-content: space-between;
@@ -51,8 +62,6 @@ button svg {
   width: clamp(3.2rem, 2rem + 7vw, 6.4rem);
 }
 
-
-
 .hide {
   display: none;
 }
@@ -62,7 +71,7 @@ button svg {
   justify-content: center;
   margin-bottom: -2rem;
   
-  font-size: 8.8rem;
+  font-size: 12rem;
   line-height: 10rem;
   font-weight: 700;
   
@@ -116,8 +125,7 @@ span {
 footer {
   align-self: end;
   justify-self: end;
-  padding: 0 4rem 3.2rem 0;
+  bottom: right;
+  padding: 10%;
   user-select: none;
-  
-
 }

@@ -12,6 +12,8 @@ const buttonSoundForest = document.querySelector('#sound-forest');
 const buttonSoundRain = document.querySelector('#sound-rain');
 const buttonSoundStore = document.querySelector('#sound-store');
 const buttonSoundFire = document.querySelector('#sound-fire');
+const buttonLightMode = document.querySelector('#light-mode');
+const buttonDarkMode = document.querySelector('#dark-mode');
 
 export {
   buttonPlay,
@@ -28,4 +30,6 @@ export {
   buttonSoundRain,
   buttonSoundStore,
   buttonSoundFire,
+  buttonDarkMode,
+  buttonLightMode,
 };

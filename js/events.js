@@ -13,6 +13,8 @@ import {
   buttonSoundFire,
   minutesDisplay,
   secondsDisplay,
+  buttonLightMode,
+  buttonDarkMode,
 } from './elements.js';
 
 export default function factoryEvents({ controls, sound, configTimer }) {
@@ -28,6 +30,19 @@ export default function factoryEvents({ controls, sound, configTimer }) {
   buttonSoundRain.addEventListener('click', handleButtonSoundRain);
   buttonSoundStore.addEventListener('click', handleButtonSoundStore);
   buttonSoundFire.addEventListener('click', handleButtonSoundFire);
+  buttonLightMode.addEventListener('click', handleLightMode);
+  buttonDarkMode.addEventListener('click', handleDarkMode);
+
+  function handleLightMode() {
+    buttonLightMode.classList.add('hide');
+    buttonDarkMode.classList.remove('hide');
+    document.body.classList.add('dark');
+  }
+
+  function handleDarkMode() {
+    buttonDarkMode.classList.add('hide');
+    buttonLightMode.classList.remove('hide');
+  }
 
   function handleButtonSoundForest() {
     controls.soundForest();
