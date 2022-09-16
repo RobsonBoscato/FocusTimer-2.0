@@ -42,6 +42,7 @@ export default function factoryEvents({ controls, sound, configTimer }) {
   function handleDarkMode() {
     buttonDarkMode.classList.add('hide');
     buttonLightMode.classList.remove('hide');
+    document.body.classList.remove('dark');
   }
 
   function handleButtonSoundForest() {
@@ -85,7 +86,6 @@ export default function factoryEvents({ controls, sound, configTimer }) {
     }
     configTimer.updateMinutes(minutes);
     configTimer.updateDisplay(minutes, secondsDisplay.textContent);
-    console.log(minutes, seconds);
   }
 
   function handleButtonPlay() {

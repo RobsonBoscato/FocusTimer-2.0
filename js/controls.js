@@ -11,25 +11,25 @@ export default function ControlsFactory({
   buttonSoundFire,
 }) {
   function soundForest() {
-    buttonSoundForest.classList.toggle('filter');
+    buttonSoundForest.classList.toggle('selected');
     buttonSoundRain.disabled = !buttonSoundRain.disabled;
     buttonSoundStore.disabled = !buttonSoundStore.disabled;
     buttonSoundFire.disabled = !buttonSoundFire.disabled;
   }
   function soundRain() {
-    buttonSoundRain.classList.toggle('filter');
+    buttonSoundRain.classList.toggle('selected');
     buttonSoundForest.disabled = !buttonSoundForest.disabled;
     buttonSoundStore.disabled = !buttonSoundStore.disabled;
     buttonSoundFire.disabled = !buttonSoundFire.disabled;
   }
   function soundStore() {
-    buttonSoundStore.classList.toggle('filter');
+    buttonSoundStore.classList.toggle('selected');
     buttonSoundForest.disabled = !buttonSoundForest.disabled;
     buttonSoundRain.disabled = !buttonSoundRain.disabled;
     buttonSoundFire.disabled = !buttonSoundFire.disabled;
   }
   function soundFire() {
-    buttonSoundFire.classList.toggle('filter');
+    buttonSoundFire.classList.toggle('selected');
     buttonSoundForest.disabled = !buttonSoundForest.disabled;
     buttonSoundRain.disabled = !buttonSoundRain.disabled;
     buttonSoundStore.disabled = !buttonSoundStore.disabled;

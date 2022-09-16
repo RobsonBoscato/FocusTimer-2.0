@@ -7,30 +7,42 @@
 :root {
   font-size: 62.5%;
 
-  --bg-color: #FFFFFF;
-  --base-color: 255;
+  --bg-color: #ffffff;
   --text-color: #323238;
-  
-  --bg-primary-light:hsla(240, 9%, 89%, 1) ;
-  --bg-secondary-light: hsla(194, 97%, 31%, 1);
-  --text-color-secondary: #FFFFFF;
-  
-  --primary-color:: hsl(var(--base-color), 100%, 63%);
+
+  --bg-primary-light: hsla(194, 97%, 31%, 1);
+  --bg-secondary-light: hsla(195, 74%, 15%, 1);
+  --bg-selected: hsla(194, 97%, 31%, 1);
+}
+
+.card-sounds.selected {
+  background: var(--bg-selected);
+  --text-color: #ffffff;
 }
 
 body.dark {
-  color: white;
-  background: #121214;
+  --bg-color: hsla(240, 5%, 7%, 1);
+  --text-color: #ffffff;
 
+  --bg-primary-light: hsla(240, 6%, 17%, 1);
+  --bg-selected: hsla(195, 74%, 15%, 1);
+}
+
+#controls svg path,
+.card svg path,
+.sound svg path {
+  fill: var(--text-color);
 }
 
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
 
+  --bg-primary-light: hsla(240, 9%, 89%, 1);
+
   font-family: 'Roboto', sans-serif;
   display: grid;
-  min-height: 100vh; 
+  min-height: 100vh;
 }
 
 main {
@@ -48,7 +60,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 80rem;
+  width: 85rem;
   height: 34rem;
 }
 
@@ -70,11 +82,10 @@ button svg {
   display: inline;
   justify-content: center;
   margin-bottom: -2rem;
-  
+
   font-size: 12rem;
   line-height: 10rem;
   font-weight: 700;
-  
 }
 span {
   display: table-cell;
@@ -85,41 +96,27 @@ span {
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  gap: 3.2rem;
-  
+  gap: 1.2rem;
+
   border-radius: 100rem;
-  
+
   width: clamp(10rem, 4rem + 26vw, 22.8rem);
   height: clamp(8rem, 2rem + 10vw, 10.8rem);
 }
-#card-sounds {
-  display: flex;
-  flex-wrap: wrap;
-  cursor: pointer;
 
-  width: 40rem;
-  height: 33.6rem;
+.card {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 50% 50%;
+  width: 34rem;
+  height: 30rem;
 }
 
-#card button {
-  margin: 1rem;
-}
-
-#card img {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-
-  width: 13.8rem;
-  height: 15.2rem;
-  border-radius: 2.4rem;
-  
+.card-sounds {
   background: var(--bg-primary-light);
-  padding: 4.6rem;
-}
-
-.filter {
-  filter: invert(90%) sepia(0%) saturate(1200%) hue-rotate(140deg) brightness(200%) contrast(80%);
+  margin: 1rem;
+  padding: 4rem;
+  border-radius: 2.4rem;
 }
 
 footer {
