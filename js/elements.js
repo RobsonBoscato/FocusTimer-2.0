@@ -14,6 +14,10 @@ const buttonSoundStore = document.querySelector('#sound-store');
 const buttonSoundFire = document.querySelector('#sound-fire');
 const buttonLightMode = document.querySelector('#light-mode');
 const buttonDarkMode = document.querySelector('#dark-mode');
+const barVolumeForest = document.querySelector('#volume1');
+const barVolumeRain = document.querySelector('#volume2');
+const barVolumeStore = document.querySelector('#volume3');
+const barVolumeFire = document.querySelector('#volume4');
 
 export {
   buttonPlay,
@@ -32,4 +36,8 @@ export {
   buttonSoundFire,
   buttonDarkMode,
   buttonLightMode,
+  barVolumeForest,
+  barVolumeRain,
+  barVolumeStore,
+  barVolumeFire,
 };

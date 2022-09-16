@@ -15,6 +15,10 @@ import {
   secondsDisplay,
   buttonLightMode,
   buttonDarkMode,
+  barVolumeForest,
+  barVolumeRain,
+  barVolumeStore,
+  barVolumeFire,
 } from './elements.js';
 
 export default function factoryEvents({ controls, sound, configTimer }) {
@@ -32,17 +36,30 @@ export default function factoryEvents({ controls, sound, configTimer }) {
   buttonSoundFire.addEventListener('click', handleButtonSoundFire);
   buttonLightMode.addEventListener('click', handleLightMode);
   buttonDarkMode.addEventListener('click', handleDarkMode);
+  barVolumeForest.addEventListener('change', handleForestVolume);
+  barVolumeRain.addEventListener('change', handleRainVolume);
+  barVolumeStore.addEventListener('change', handleStoreVolume);
+  barVolumeFire.addEventListener('change', handleFireVolume);
+
+  function handleForestVolume() {
+    sound.volumeSetter(barVolumeForest.value / 100, barVolumeForest.id);
+  }
+  function handleRainVolume() {
+    sound.volumeSetter(barVolumeRain.value / 100, barVolumeRain.id);
+  }
+  function handleStoreVolume() {
+    sound.volumeSetter(barVolumeStore.value / 100, barVolumeStore.id);
+  }
+  function handleFireVolume() {
+    sound.volumeSetter(barVolumeFire.value / 100, barVolumeFire.id);
+  }
 
   function handleLightMode() {
-    buttonLightMode.classList.add('hide');
-    buttonDarkMode.classList.remove('hide');
-    document.body.classList.add('dark');
+    controls.lightMode();
   }
 
   function handleDarkMode() {
-    buttonDarkMode.classList.add('hide');
-    buttonLightMode.classList.remove('hide');
-    document.body.classList.remove('dark');
+    controls.darkMode();
   }
 
   function handleButtonSoundForest() {
@@ -141,5 +158,11 @@ export default function factoryEvents({ controls, sound, configTimer }) {
     handleButtonSoundFire,
     handleButtonIncrementTime,
     handleButtonDecrementTime,
+    handleLightMode,
+    handleDarkMode,
+    handleForestVolume,
+    handleRainVolume,
+    handleStoreVolume,
+    handleFireVolume,
   };
 }

@@ -88,6 +88,24 @@ export default function () {
     store.volume = 1;
   }
 
+  function volumeSetter(volume, id) {
+    console.log(`VOLUME: ${volume} e ID: ${id}`);
+    switch (id) {
+      case 'volume1':
+        forest.volume = volume;
+        break;
+      case 'volume2':
+        rain.volume = volume;
+        break;
+      case 'volume3':
+        store.volume = volume;
+        break;
+      default:
+        fire.volume = volume;
+        break;
+    }
+  }
+
   function pressButton() {
     buttonPressAudio.play();
   }
@@ -102,5 +120,6 @@ export default function () {
     stopSound,
     currentSound,
     playSound,
+    volumeSetter,
   };
 }

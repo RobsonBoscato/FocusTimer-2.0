@@ -15,6 +15,8 @@ import {
   buttonSoundRain,
   buttonSoundStore,
   buttonSoundFire,
+  buttonDarkMode,
+  buttonLightMode,
 } from './elements.js';
 
 const controls = ControlsFactory({
@@ -28,6 +30,8 @@ const controls = ControlsFactory({
   buttonSoundRain,
   buttonSoundFire,
   buttonSoundStore,
+  buttonLightMode,
+  buttonDarkMode,
 });
 
 const configTimer = TimerFactory({

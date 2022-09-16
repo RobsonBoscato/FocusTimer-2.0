@@ -9,7 +9,21 @@ export default function ControlsFactory({
   buttonSoundRain,
   buttonSoundStore,
   buttonSoundFire,
+  buttonLightMode,
+  buttonDarkMode,
 }) {
+  function darkMode() {
+    buttonDarkMode.classList.add('hide');
+    buttonLightMode.classList.remove('hide');
+    document.body.classList.remove('dark');
+  }
+
+  function lightMode() {
+    buttonLightMode.classList.add('hide');
+    buttonDarkMode.classList.remove('hide');
+    document.body.classList.add('dark');
+  }
+
   function soundForest() {
     buttonSoundForest.classList.toggle('selected');
     buttonSoundRain.disabled = !buttonSoundRain.disabled;
@@ -85,5 +99,7 @@ export default function ControlsFactory({
     soundRain,
     soundStore,
     soundFire,
+    lightMode,
+    darkMode,
   };
 }
