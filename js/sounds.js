@@ -89,7 +89,6 @@ export default function () {
   }
 
   function volumeSetter(volume, id) {
-    console.log(`VOLUME: ${volume} e ID: ${id}`);
     switch (id) {
       case 'volume1':
         forest.volume = volume;
